@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* All other .scss files go in here */
+@import "navbar";
+@import "about-me";
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    @apply flex flex-col min-h-screen bg-gray-950 text-gray-400;
+}
+
+header {
+    @apply bg-black shadow;
+}
+
+footer {
+    @apply bg-black shadow p-4 text-center;
+}
+
+main {
+    @apply flex-grow container mx-auto p-4;
+}
+
+section {
+    @apply my-8;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
