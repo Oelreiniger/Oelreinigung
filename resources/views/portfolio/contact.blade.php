@@ -1,3 +1,4 @@
+@component('defaultLayout')
 <section id="contact">
     <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold">Contact</h2>
     <form class="mt-4">
@@ -11,3 +12,4 @@
         </div>
     </form>
 </section>
+@endcomponent

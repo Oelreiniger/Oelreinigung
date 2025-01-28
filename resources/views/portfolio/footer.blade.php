@@ -1,3 +1,3 @@
 <footer>
-    &copy; 2024 My Portfolio. All rights reserved.
+    <div>&copy; 2025 My Portfolio. All rights reserved.</div>
 </footer>

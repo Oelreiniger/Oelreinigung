@@ -1,0 +1,102 @@
+.video-background {
+    @apply min-w-full min-h-full fixed;
+    video{
+        @apply min-w-full min-h-full absolute -z-10 object-cover;
+    }
+}
+
+.video-background::before {
+    transition: background-color 0.2s ease-in-out;
+    content: '';
+    position: absolute;
+    background: rgb(0, 0, 0, 0);
+    top: 0;
+    left: 0;
+    @apply min-w-full min-h-full;
+}
+
+#centered-navbar-border {
+    top: 50%;
+    left: 50%;
+    transform: scaleX(1) scaleY(1) translate(-50%, -50%);
+    background: rgb(#5972b6, 0.1);
+
+    animation: navbarOut 0.2s ease-in-out forwards;
+    @apply h-[100px] w-[70vw] max-w-[400px] absolute rounded-3xl;
+}
+
+#centered-navbar-border::after {
+    transition: transform 0.2s ease-in-out;
+    content: '';
+    transform: scaleX(1) scaleY(1);
+    background: rgb(#5972b6, 0.4);
+
+    @apply w-full h-full absolute rounded-3xl;
+}
+
+@keyframes navbarIn {
+    from {
+        transform: scaleX(1) scaleY(1) translate(-50%, -49%);
+    }
+    to {
+        transform: scaleX(115%) scaleY(115%) translate(-43.5%, -43.5%);
+    }
+}
+
+@keyframes navbarOut {
+    from {
+        transform: scaleX(115%) scaleY(115%) translate(-43.5%, -43.5%);
+    }
+    to {
+        transform: scaleX(1) scaleY(1) translate(-50%, -49%);
+    }
+}
+
+body:has(#centered-navbar:hover) #centered-navbar-border {
+    animation: navbarIn 0.15s ease-in-out forwards;
+}
+
+body:has(#centered-navbar:hover) #centered-navbar-border::after {
+    transform: scaleX(95%) scaleY(95%);
+}
+
+body:has(#centered-navbar:hover) .video-background::before {
+    background: rgb(0, 0, 0, 0.5);
+}
+
+#centered-navbar {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #5972b6;
+    @apply h-[100px] w-[70vw] max-w-[400px] absolute flex justify-center rounded-3xl px-8;
+}
+
+.navbar-button-image {
+    transition: all 150ms ease-in-out;
+    @apply w-auto min-w-[65px] h-4/6 mb-0;
+}
+
+.button-wrapper {
+    @apply relative w-full h-full flex-col flex justify-center items-center;
+
+    p {
+        top: -70%;
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 14pt;
+        font-weight: 500;
+        border-color: #54c0fe;
+        @apply text-center border-[6px] rounded-full p-2 whitespace-nowrap absolute hidden;
+    }
+}
+
+.button-wrapper:hover {
+    .navbar-button-image {
+        @apply h-3/4 mb-[30px];
+    }
+
+    p {
+        @apply block;
+    }
+}
