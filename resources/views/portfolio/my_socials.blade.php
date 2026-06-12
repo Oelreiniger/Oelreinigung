@@ -1,4 +1,4 @@
-<div class="absolute right-0 flex justify-end h-[100px]">
+<div class="fixed right-0 top-0 flex justify-end h-[100px]">
     @include('components.portfolio.my_socials_button', [ 'link' =>'https://github.com/Oelreiniger',
                                                          'imgSrc' => 'storage/homepage/github.svg',
                                                          'imgAlt' => 'Github Icon'])

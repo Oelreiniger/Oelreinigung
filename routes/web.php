@@ -17,7 +17,6 @@ Route::get('/', function () {
     return view('portfolio/homepage');
 });
 
-
 Route::get('/me', function () {
     return view('portfolio/about_me');
 });
